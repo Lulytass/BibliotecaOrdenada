@@ -1,64 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../Css/buscador.css">
-        <link rel="stylesheet" href="../Css/BarraNavegacion.css">
-        <link rel="stylesheet" href="../Css/PieDePagina.css">
-        <link rel="shortcut icon" href="../Imagenes/logo2.png" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!--Agregado por Rosa-->
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@500&family=Satisfy&family=Signika+Negative:wght@600&display=swap" rel="stylesheet"> <!--Agregado por Rosa-->
-        <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Dancing+Script:wght@700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet"> <!--Agregado por Rosa-->
-        <title>Libreria Online</title>
-      </head>
-    <body>
-        <header>
-            <nav>
-              <div class="logo">
-                <img id="logo" src="../Imagenes/Logo.png" alt="Logo" />
-              </div>
-              <div class="buscador">
-                <input class="input" type="text" name="nombreJuego" id="campo" placeholder="Buscar" onkeyup="buscador()">
-                <img src="../Imagenes/lupa.png" alt="imagen lupa" />
-              </div>
-              <div class="secciones">
-                <a
-                  href="mailto:correo1@example.com,correo2@example.com,correo3@example.com,correo4@example.com"
-                  ><img src="../Imagenes/sobre.png" alt="Email"
-                /></a>
-                <div class="dropdown">
-                  <img src="../Imagenes/usuario.png" alt="Menu Usuario" onclick="abrirMenu()"/>
-                  <div id="opcionesMenu">
-                    <a href="#">Iniciar Sesión</a>
-                    <a href="#">Crear Usuario</a>
-                  </div>
-                </div>
-              </div>
-            </nav>
-          </header>
-        <main>
-            <div class="listaLibros">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Genero</th>
-                            <th>Escritor</th>
-                            <th>Editorial</th>
-                        </tr>
-                    </thead>
-                    <tbody id="registro">
-                        <!-- aca se insertan los registros coincidentes desde js -->
-                    </tbody>
-                </table>
-            </div>
-        </main>
-        <footer>
-            <p>Pagina creada por Clara, Omar, Pablo, Rosa, Lucía</p>
-        </footer>
-    </body>
-    <script type='text/javascript' src='../Js/arrayDeLibros.js'></script>
-    <script type='text/javascript' src='../Js/buscador.js'></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Css/buscador.css">
+  <link rel="stylesheet" href="../Css/BarraNavegacion.css">
+  <link rel="stylesheet" href="../Css/PieDePagina.css">
+  <link rel="shortcut icon" href="../Imagenes/logo2.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--Agregado por Rosa-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@500&family=Satisfy&family=Signika+Negative:wght@600&display=swap"
+    rel="stylesheet"> <!--Agregado por Rosa-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin&family=Dancing+Script:wght@700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"> <!--Agregado por Rosa-->
+  <title>Libreria Online</title>
+</head>
+
+<body>
+  <header>
+    <!-- lo insertamos desde headerFooter.js -->
+  </header>
+  <main>
+    <div class="listaLibros">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+            <th>Escritor</th>
+            <th>Editorial</th>
+          </tr>
+        </thead>
+        <tbody id="registro">
+          <!-- aca se insertan los registros coincidentes desde js -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <!-- lo insertamos desde headerFooter.js -->
+  </footer>
+</body>
+<script type='text/javascript' src='../Js/headerFooter.js'></script>
+
+<script type='text/javascript' src='../Js/arrayDeLibros.js'></script>
+<script type='text/javascript' src='../Js/buscador.js'></script>
+
 </html>

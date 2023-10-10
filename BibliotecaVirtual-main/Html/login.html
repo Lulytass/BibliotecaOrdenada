@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Css/sucursales.css">
+  <link rel="stylesheet" href="../Css/login.css">
   <link rel="stylesheet" href="../Css/BarraNavegacion.css">
   <link rel="stylesheet" href="../Css/PieDePagina.css">
   <link rel="shortcut icon" href="../Imagenes/logo2.png" type="image/x-icon">
@@ -27,19 +27,37 @@
   </header>
   <main>
     <br>
-    <nav class="sucursales">
-      <!-- las ingresamos desde ucursales.js -->
-    </nav>
-
+    <!-- Formularios -->
+    <div class="contenedor">
+        <form class="article1" method="post" action="">
+            
+            <div class="partes">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Introduce tu email" required>
+            </div>
+    
+            <div class="partes">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Introduce tu contraseña" required>
+                <br />
+                <span id="contraseña-error"></span>
+            </div>
+    
+            <div class="bot">
+                <button type="submit" id="enviar" disabled>Enviar</button>
+            </div>
+            <div class="partes">
+                <p><a href="#">Recuperar</a> contraseña.</p>
+            </div>
+        </form>
+    </div>
   </main>
   <br>
   <footer>
     <!-- lo insertamos desde headerFooter.js -->
   </footer>
   <script type='text/javascript' src='../Js/headerFooter.js'></script>
-
-  <script type='text/javascript' src='../Js/sucursales.js'></script>
-
+  <script type='text/javascript' src='../Js/login.js'></script>
 </body>
 
 </html>

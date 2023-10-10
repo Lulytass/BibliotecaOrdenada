@@ -8,13 +8,13 @@ libros.forEach(item => {
     
     
     if(item.genero == "misterio"){
-        misterioLibros += `<div class="carousel-item-1"><img id="${item.id}" class="libro" src="./imagenes/${item.imagen}" alt="${item.nombre}">
+        misterioLibros += `<div class="carousel-item-1"><img id="${item.id}" class="libro" src="../imagenes/${item.imagen}" alt="${item.nombre}">
         </img></div>`;
     }else if(item.genero == "novela"){
-        novelaLibros += `<div class="carousel-item-2"><img id="${item.id}" class="libro" src="./imagenes/${item.imagen}" alt="${item.nombre}">
+        novelaLibros += `<div class="carousel-item-2"><img id="${item.id}" class="libro" src="../imagenes/${item.imagen}" alt="${item.nombre}">
         </img></div>`;
     }else if(item.genero == "suspenso"){
-        suspensoLibros += `<div class="carousel-item-3"><img id="${item.id}" class="libro" src="./imagenes/${item.imagen}" alt="${item.nombre}">
+        suspensoLibros += `<div class="carousel-item-3"><img id="${item.id}" class="libro" src="../imagenes/${item.imagen}" alt="${item.nombre}">
         </img></div>`;
     }
     
@@ -125,27 +125,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-// redireccion a traves del buscador
-
-const campo = document.getElementById('campo');
-
-campo.addEventListener('click', function () {
-  // redireccion
-  window.location.href = './Html/buscador.html';
-});
-
-/*apertura de menu avatar*/
-
-function abrirMenu() {
-    var opcionesMenu = document.getElementById("opcionesMenu");
-    opcionesMenu.style.display = (opcionesMenu.style.display === "block") ? "none" : "block";
-}
-
 // redireccion a detalles del libro y guardamos el Id del libro clickeado
 
 document.querySelectorAll(".libro").forEach(el => el.addEventListener("click", clickImagen));
 function clickImagen(e) {
     let idLibro = this.id ;
-    window.location.href = './Html/libros.html';
+    window.location.href = './libros.html';
 }
+
+
+
+
+
+
 

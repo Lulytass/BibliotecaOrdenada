@@ -11,10 +11,6 @@ body{
     min-height: 100vh;
 }
 
-footer{
-    padding: 15PX 0;
-}
-
 .sucursales{
     display: flex;
     justify-content: space-evenly;
@@ -22,11 +18,8 @@ footer{
     color: rgb(94, 7, 7);
 }    
 
-#logo{
-    cursor: pointer;
-}
 
-#libreria{
+.libreria{
     text-align: center;
     border: 5px inset grey;
 }

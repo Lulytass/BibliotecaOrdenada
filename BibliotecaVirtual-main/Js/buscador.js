@@ -3,7 +3,7 @@ function buscador () {
   document.getElementById("registro").innerHTML = '';
 
   // tomamos lo que ingresa el usuario quitando espacios en blanco al principio y final 
-   var palabraUsuario = document.getElementById("campo").value.trim();
+   var palabraUsuario = document.getElementById("buscar").value.trim();
   //  guardamos el tamaño de lo ingresado
    var tampalabraUsuario = palabraUsuario.length;
   //  con el for vamos recorriendo el array de objetos que tomamos de ArrayDeLibros.js
@@ -35,7 +35,7 @@ function buscador () {
         fila.appendChild(columna2Fila);
         fila.appendChild(columna3Fila);
         fila.appendChild(columna4Fila);
-        // aagregamos al tbody la fila con sus columnas con los datos que corresponden
+        // agregamos al tbody la fila con sus columnas con los datos que corresponden
         document.getElementById("registro").appendChild(fila);
        }
     }
@@ -43,16 +43,4 @@ function buscador () {
   
 }
 
-/*apertura de menu avatar*/
-function abrirMenu() {
-    var opcionesMenu = document.getElementById("opcionesMenu");
-    opcionesMenu.style.display = (opcionesMenu.style.display === "block") ? "none" : "block";
-}
 
-// redirigir a la vista Index
-const logo = document.getElementById('logo');
-
-logo.addEventListener('click', function (){
-  // redireccion
-  window.location.href = '../index.html';
-});
