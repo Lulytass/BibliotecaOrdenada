@@ -12,6 +12,10 @@ body{
     min-height: 100vh;
 }
 
+#logo{
+    cursor: pointer;
+}
+
 .contenedor {
     display: flex;
     justify-content: center;

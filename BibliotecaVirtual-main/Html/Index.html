@@ -18,16 +18,19 @@
       <header>
         <!-- lo insertamos desde headerFooter.js -->
       </header>
-      <main>
+      <main id="app">
         
         <!-- INICIO CAROUSEL -->
-        <h3>Misterio</h3>
+        <h3>Recomendados</h3>
         <div class="carousel-container">
-          <button class="prev-button-1"><</button>
-          <div class="carousel-1" id="carousel1">
+          <button class="prev-button-1" @click="prevSlide1(1)"><</button>
+          <div class="carousel-1" id="carousel1" :style="carouselStyle1(1)">
             <!-- aca se insertan las imagenes desde JS -->
+            <div class="carousel-item-1" ref="carousel-item-1" v-for="recomendado of recomendados">
+              <img :key="recomendado.id" @click="clickImagen(recomendado.id)" :class="recomendado.clase" :src="recomendado.imagen" :alt="recomendado.nombre"></img>
+            </div>
           </div>
-          <button class="next-button-1">></button>
+          <button class="next-button-1" @click="nextSlide1(1)">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
@@ -35,23 +38,29 @@
         <!-- INICIO CAROUSEL -->
         <h3>Novelas</h3>
         <div class="carousel-container">
-          <button class="prev-button-2"><</button>
-          <div class="carousel-2" id="carousel2">
+          <button class="prev-button-2" @click="prevSlide2(1)"><</button>
+          <div class="carousel-2" id="carousel2" :style="carouselStyle2(1)">
             <!-- aca se insertan las imagenes desde JS -->
+            <div class="carousel-item-2" v-for="novela of novelas">
+              <img :key="novela.id" @click="clickImagen(novela.id)" :class="novela.clase" :src="novela.imagen" :alt="novela.nombre"></img>
+            </div>
           </div>
-          <button class="next-button-2">></button>
+          <button class="next-button-2" @click="nextSlide2(1)">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
 
         <!-- INICIO CAROUSEL -->
-        <h3>Suspenso</h3>
+        <h3>Ficciones</h3>
         <div class="carousel-container">
-          <button class="prev-button-3"><</button>
-          <div class="carousel-3" id="carousel3">
+          <button class="prev-button-3" @click="prevSlide3(1)"><</button>
+          <div class="carousel-3" id="carousel3" :style="carouselStyle3(1)">
             <!-- aca se insertan las imagenes desde JS -->
+            <div v-for="ficcion of ficciones" class="carousel-item-2" >
+              <img :key="ficcion.id" @click="clickImagen(ficcion.id)" :class="ficcion.clase" :src="ficcion.imagen" :alt="ficcion.nombre"></img>
+            </div>
           </div>
-          <button class="next-button-3">></button>
+          <button class="next-button-3" @click="nextSlide3(1)">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
@@ -78,11 +87,10 @@
       <footer>
         <!-- lo insertamos desde headerFooter.js -->
       </footer>
+
       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-      <script type='text/javascript' src='../Js/arrayDeLibros.js'></script>
       <script type='text/javascript' src='../Js/headerFooter.js'></script>
       <script type='text/javascript' src='../Js/index.js'></script>
-    
     </body>
     
 </html>

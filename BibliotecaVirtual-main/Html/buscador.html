@@ -21,33 +21,43 @@
 </head>
 
 <body>
-  <header>
-    <!-- lo insertamos desde headerFooter.js -->
-  </header>
-  <main>
-    <div class="listaLibros">
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Genero</th>
-            <th>Escritor</th>
-            <th>Editorial</th>
-          </tr>
-        </thead>
-        <tbody id="registro">
-          <!-- aca se insertan los registros coincidentes desde js -->
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <footer>
-    <!-- lo insertamos desde headerFooter.js -->
-  </footer>
+  <div id="app">
+    <header>
+      <!-- lo insertamos desde headerFooter.js -->
+    </header>
+    <main>
+      <div class="listaLibros">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Genero</th>
+              <th>Escritor</th>
+              <th>Editorial</th>
+            </tr>
+          </thead>
+          <tbody id="registro">
+            <!-- aca se insertan los registros coincidentes desde js -->
+            <tr v-for="resultado in resultados" :key="resultado.id" @click="clickImagen(resultado.id)">
+              <td>{{resultado.nombre}}</td>
+              <td>{{resultado.genero}}</td>
+              <td>{{resultado.escritor}}</td>
+              <td>{{resultado.editorial}}</td>
+              <td hidden>{{resultado.id}}</td>
+            </tr>
+          
+          
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <!-- lo insertamos desde headerFooter.js -->
+    </footer>
+  </div>  
+  <script type='text/javascript' src='../Js/headerFooter.js'></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type='text/javascript' src='../Js/buscador.js'></script>
 </body>
-<script type='text/javascript' src='../Js/headerFooter.js'></script>
-
-<script type='text/javascript' src='../Js/arrayDeLibros.js'></script>
-<script type='text/javascript' src='../Js/buscador.js'></script>
 
 </html>

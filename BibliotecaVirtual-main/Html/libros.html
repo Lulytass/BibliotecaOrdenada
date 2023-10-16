@@ -29,19 +29,19 @@
         <!-- lo insertamos desde headerFooter.js -->
     </header>
     <main>
-        <section>
+        <section id="app">
             <div class="contenedor">
                 <div class="portada">
                     <br><br>
                     <div class="libro">
                         <div id="libro">
-                            <img src="../Imagenes/1984.png" alt="">
+                            <img :src="libroDetallado.imagen" :alt="libroDetallado.nombre">
                         </div>
                     </div>
                     <br>
                     <div class="botones">
                         <button id="boton">
-                            <a href="../Libros/1984 - George Orwell.pdf" download>Descargar</a>
+                            <a :href="libroDetallado.libro" download>Descargar</a>
                         </button>
                         <button id="boton">
                             <a href="./sucursales.html">Sucursales</a>
@@ -51,21 +51,17 @@
                 </div>
                 <div class="ficha">
 
-                    <h1>1984</h1>
+                    <h1>{{libroDetallado.nombre}}</h1>
                     <br>
-                    <h2>George Orwell</h2>
+                    <h2>{{libroDetallado.escritor}}</h2>
                     <br>
-                    <div id="estrellas">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
+                    <!-- ponemos las estrellas de forma dinamica dependiendo del registro -->
+                    <div id="estrellas" v-if="libroDetallado.estrellas > 0">
+                        <span v-for="n in 5" :key="n" class="fa" :class="{ 'fa-star': n <= libroDetallado.estrellas, 'fa-star checked': n <= libroDetallado.estrellas }"></span>
+                       
                     </div>
                     <br>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam unde nemo laboriosam iusto alias
-                        dolorem corrupti porro quasi accusantium! Dolor modi repellat magnam reprehenderit ab facilis
-                        accusantium inventore vitae deserunt.</p>
+                    <p>{{libroDetallado.resumen}}</p>
                     <br>
                 </div>
             </div>
@@ -74,6 +70,7 @@
     <footer>
         <!-- lo insertamos desde headerFooter.js -->
     </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type='text/javascript' src='../Js/headerFooter.js'></script>
     <script type='text/javascript' src='../Js/libros.js'></script>
 </body>

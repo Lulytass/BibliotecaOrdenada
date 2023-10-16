@@ -2,7 +2,7 @@ let header=
 `
     <nav>
         <div class="logo">
-            <img id="logo" src="../Imagenes/Logo.png" alt="Logo"/>
+            <a href="./index.html"><img id="logo" src="../Imagenes/Logo.png" alt="Logo"/><a>
         </div>
         <div class="buscador">
         
@@ -33,12 +33,36 @@ document.querySelector("header").innerHTML = header;
 document.querySelector("footer").innerHTML = footer;
 
 
-// si no estamos en el index no aparece la sección nosotros
+// guardamos la ruta en la que estamos ubicados
 var dir = location.href;
+
+// si estamos en la vista buscador.html la barra cambia
+if(dir.slice(-14) !== "/buscador.html"){
+    document.querySelector(".buscador").innerHTML = `
+        <input class="input" type="text" name="nombreLibro" id="buscar" placeholder="Buscar">
+        <img src="../Imagenes/lupa.png" alt="imagen lupa" />
+        
+    `;  
+    // redireccion a traves del buscador
+    // tomamos el elemento con Id buscar, al hacer click en el se redireccionara
+    const campo = document.getElementById('buscar');
+    campo.addEventListener('click', function () {
+    // redireccion
+    window.location.href = './buscador.html';
+    }); 
+}else{
+    // si estamos en la vista buscaror.html el input de busqueda sera este otro con la funcionalidad necesaria
+    document.querySelector(".buscador").innerHTML = `
+        <input class="input" type="text" name="nombreLibro" id="buscar" placeholder="Buscar" v-model.lazy="palabraUsuario">
+        <img src="../Imagenes/lupa.png" alt="imagen lupa"/>
+    `; 
+}
+
+// si no estamos en el index no aparece la sección nosotros
 if(dir.slice(-11) !== "/index.html"){
     var nosotros = document.getElementById("nosotros");
     nosotros.style.display="none";
-    
+
 }
 
 // si estamos en la vista crear usuario no aparece la opcion que redirecciona alli
@@ -53,39 +77,8 @@ if(dir.slice(-18) == "/crearUsuario.html"){
     crearUsuario.style.display="none";   
 }
 
-// si estamos en la vista buscador.html la barra cambia
-if(dir.slice(-14) !== "/buscador.html"){
-    document.querySelector(".buscador").innerHTML = `
-        <input class="input" type="text" name="nombreJuego" id="campo" placeholder="Buscar">
-        <img src="../Imagenes/lupa.png" alt="imagen lupa" />
-        
-    `;  
-    // redireccion a traves del buscador
-    const campo = document.getElementById('campo');
-    campo.addEventListener('click', function () {
-    // redireccion
-    window.location.href = './buscador.html';
-    }); 
-}else{
-    document.querySelector(".buscador").innerHTML = `
-        <input class="input" type="text" name="nombreJuego" id="buscar" placeholder="Buscar" onkeyup="buscador()">
-        <img src="../Imagenes/lupa.png" alt="imagen lupa" />
-    `; 
-}
-
 /*apertura de menu avatar*/
 function abrirMenu() {
     var opcionesMenu = document.getElementById("opcionesMenu");
     opcionesMenu.style.display = (opcionesMenu.style.display === "block") ? "none" : "block";
 }
-
-// redirigir a la vista Index
-const logo = document.getElementById('logo');
-
-logo.addEventListener('click', function (){
-  // redireccion
-  window.location.href = './index.html';
-});
-
-
-
