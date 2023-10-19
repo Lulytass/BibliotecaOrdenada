@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Css/Index.css">
+        <link rel="stylesheet" href="./Css/BarraNavegacion.css">
+        <link rel="stylesheet" href="./Css/PieDePagina.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet"/>
+        <link rel="shortcut icon" href="./Imagenes/logo2.png" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!--Agregado por Rosa-->
+        <title>Libreria Online</title>
+    </head>
+    <body>
+      <header>
+        <!-- lo insertamos desde headerFooter.js -->
+      </header>
+      <main id="app">
+        
+        <!-- INICIO CAROUSEL -->
+        <h3>Recomendados</h3>
+        <div class="carousel-container">
+          <button class="prev-button-1" @click="prevSlide1(1)"><</button>
+          <div class="carousel-1" id="carousel1" :style="carouselStyle1(1)">
+            <!-- aca se insertan las imagenes desde JS -->
+            <div class="carousel-item-1" ref="carousel-item-1" v-for="recomendado of recomendados">
+              <img :key="recomendado.id" @click="clickImagen(recomendado.id)" :class="recomendado.clase" :src="recomendado.imagen" :alt="recomendado.nombre"></img>
+            </div>
+          </div>
+          <button class="next-button-1" @click="nextSlide1(1)">></button>
+        </div>
+        
+        <!-- FIN CAROUSEL -->
+        
+        <!-- INICIO CAROUSEL -->
+        <h3>Novelas</h3>
+        <div class="carousel-container">
+          <button class="prev-button-2" @click="prevSlide2(1)"><</button>
+          <div class="carousel-2" id="carousel2" :style="carouselStyle2(1)">
+            <!-- aca se insertan las imagenes desde JS -->
+            <div class="carousel-item-2" v-for="novela of novelas">
+              <img :key="novela.id" @click="clickImagen(novela.id)" :class="novela.clase" :src="novela.imagen" :alt="novela.nombre"></img>
+            </div>
+          </div>
+          <button class="next-button-2" @click="nextSlide2(1)">></button>
+        </div>
+        
+        <!-- FIN CAROUSEL -->
+
+        <!-- INICIO CAROUSEL -->
+        <h3>Ficciones</h3>
+        <div class="carousel-container">
+          <button class="prev-button-3" @click="prevSlide3(1)"><</button>
+          <div class="carousel-3" id="carousel3" :style="carouselStyle3(1)">
+            <!-- aca se insertan las imagenes desde JS -->
+            <div v-for="ficcion of ficciones" class="carousel-item-2" >
+              <img :key="ficcion.id" @click="clickImagen(ficcion.id)" :class="ficcion.clase" :src="ficcion.imagen" :alt="ficcion.nombre"></img>
+            </div>
+          </div>
+          <button class="next-button-3" @click="nextSlide3(1)">></button>
+        </div>
+        
+        <!-- FIN CAROUSEL -->
+  
+        <div class="separador">
+          <img src="../Imagenes/banner.jpg" alt="imagen libros" />
+        </div>
+        <section id="seccionNosotros" class="nosotros">
+          <h3>Sobre Nosotros</h3>
+          <p>
+            Somos un apasionado grupo de estudiantes de Codo a Codo, todos inmersos en el emocionante mundo de la programación, con un enfoque especial en el desarrollo Full Stack en Python. A pesar de nuestras diferencias en niveles de aprendizaje y experiencia, compartimos un objetivo común: explorar, aprender y crear a través del código.
+            Nuestra unidad se forja a través de la pasión que compartimos por la lectura y el deseo de llevar la experiencia de la biblioteca al mundo digital. Inspirados por la magia de los libros, hemos unido fuerzas para dar vida a nuestro proyecto: una biblioteca virtual que no solo celebra la literatura, sino que también la hace accesible a cualquier rincón del mundo.
+            Cada uno de nosotros aporta un conjunto único de habilidades y perspectivas a esta empresa. Ya sea que estemos descubriendo los conceptos básicos de Python o explorando los misterios del desarrollo web, juntos construimos un puente entre el mundo de la programación y la pasión por la lectura.
+            Nuestra biblioteca virtual es más que un proyecto; es una manifestación de nuestro compromiso compartido con la educación, el acceso a la información y la tecnología. Estamos emocionados por lo que el futuro nos depara, y esperamos que, a medida que nuestra biblioteca crezca, también lo haga nuestra comunidad de amantes de los libros y la programación.
+            ¡Únete a nosotros en este viaje donde la imaginación y el código se entrelazan en un mundo de historias y posibilidades infinitas!
+          </p>
+        </section>
+      </main>
+      <footer>
+        <!-- lo insertamos desde headerFooter.js -->
+      </footer>
+
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script type='text/javascript' src='./Js/headerFooter.js'></script>
+      <script type='text/javascript' src='./Js/index.js'></script>
+    </body>
+    
+</html>

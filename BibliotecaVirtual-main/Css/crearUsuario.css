@@ -45,7 +45,7 @@ label {
     align-items: center;
 }
 
-input[type="text"],
+.text,
 input[type="date"],
 input[type="email"],
 input[type="password"],
@@ -84,7 +84,7 @@ button[type="submit"]:hover:not([disabled]) {
 
 @media only screen and (min-width: 768px) {
 
-    input[type="text"],
+    .text,
     input[type="date"] {
         width: 45%;
         margin-right: 10%;
