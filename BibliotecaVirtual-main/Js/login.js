@@ -16,8 +16,6 @@ function validateForm() {
     } else {
         if (passwordInput.value.length < 8) {
             passwordError.innerHTML = 'La contraseña debe tener al menos 8 caracteres.';
-        } else {
-            passwordError.innerHTML = '';
         }
         submitButton.disabled = true;
     }

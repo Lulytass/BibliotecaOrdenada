@@ -39,61 +39,61 @@ createApp({
             }) 
         },
         // funciones primer carousel
-        prevSlide1(carouselNumber) {
-          if (carouselNumber === 1) {
+        prevSlide1() {
+          
             this.currentIndex1 = (this.currentIndex1 - 1 + this.recomendados.length) % this.recomendados.length;
              
-        }
+        
         },
-        nextSlide1(carouselNumber) {
-          if (carouselNumber === 1) {
+        nextSlide1() {
+         
             this.currentIndex1 = (this.currentIndex1 + 1) % this.recomendados.length;
              
-        }
+        
         },
-        carouselStyle1(carouselNumber) {
-            if (carouselNumber === 1) {
+        carouselStyle1() {
+           
               const offset = -this.currentIndex1 * (this.imagenWidth + 16); // Ajusta imagenWidth según tus necesidades
               return `transform: translateX(${offset}px); transition: transform 0.5s;`;
-            }
+            
         },
         // funciones segundo carousel
-        prevSlide2(carouselNumber) {
-            if (carouselNumber === 1) {
+        prevSlide2() {
+            
               this.currentIndex2 = (this.currentIndex2 - 1 + this.novelas.length) % this.novelas.length;
                
-            }
+            
         },
-        nextSlide2(carouselNumber) {
-            if (carouselNumber === 1) {
+        nextSlide2() {
+            
               this.currentIndex2 = (this.currentIndex2 + 1) % this.novelas.length;
                
-            }
+            
         },
-        carouselStyle2(carouselNumber) {
-            if (carouselNumber === 1) {
+        carouselStyle2() {
+            
                 const offset = -this.currentIndex2 * (this.imagenWidth + 16); // Ajusta imagenWidth según tus necesidades
                 return `transform: translateX(${offset}px); transition: transform 0.5s;`;
-            }
+            
         },
         //   funciones tercer carousel
-        prevSlide3(carouselNumber) {
-            if (carouselNumber === 1) {
+        prevSlide3() {
+           
               this.currentIndex3 = (this.currentIndex3 - 1 + this.ficciones.length) % this.ficciones.length;
              
-            }
+            
         },
-        nextSlide3(carouselNumber) {
-            if (carouselNumber === 1) {
+        nextSlide3() {
+            
               this.currentIndex3 = (this.currentIndex3 + 1) % this.ficciones.length;
              
-            }
+            
         },
-        carouselStyle3(carouselNumber) {
-              if (carouselNumber === 1) {
+        carouselStyle3() {
+              
                 const offset = -this.currentIndex3 * (this.imagenWidth + 16); // Ajusta imagenWidth según tus necesidades
                 return `transform: translateX(${offset}px); transition: transform 0.5s;`;
-              }
+              
         },
         // redireccion al hacer click en la imagen del libro y guardamos el id para completar la info en la vista 
         clickImagen(idLibro) {

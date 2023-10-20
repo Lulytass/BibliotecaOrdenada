@@ -79,7 +79,7 @@ let headerIndex=
 
 let footer =
 `
-    <p>Pagina creada por Clara, Omar, Pablo, Rosa, Lucía</p>
+    <p>Pagina creada por Clara, Pablo, Rosa, Lucía</p>
 `; 
 
 

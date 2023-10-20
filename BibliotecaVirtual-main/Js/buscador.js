@@ -47,7 +47,6 @@ createApp({
         // Guarda el ID del libro en localStorage para usarlo en la página de detalles
         localStorage.setItem('idLibroClickeado', idLibro);
         // Redirige a la página de detalles del libro
-        console.log(localStorage.getItem('idLibroClickeado'))
         window.location.href = '../Html/libros.html';
     },
     },

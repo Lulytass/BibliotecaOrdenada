@@ -30,7 +30,7 @@
               <img :key="recomendado.id" @click="clickImagen(recomendado.id)" :class="recomendado.clase" :src="recomendado.imagen" :alt="recomendado.nombre"></img>
             </div>
           </div>
-          <button class="next-button-1" @click="nextSlide1(1)">></button>
+          <button class="next-button-1" @click="nextSlide1()">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
@@ -45,7 +45,7 @@
               <img :key="novela.id" @click="clickImagen(novela.id)" :class="novela.clase" :src="novela.imagen" :alt="novela.nombre"></img>
             </div>
           </div>
-          <button class="next-button-2" @click="nextSlide2(1)">></button>
+          <button class="next-button-2" @click="nextSlide2()">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
@@ -53,14 +53,14 @@
         <!-- INICIO CAROUSEL -->
         <h3>Ficciones</h3>
         <div class="carousel-container">
-          <button class="prev-button-3" @click="prevSlide3(1)"><</button>
+          <button class="prev-button-3" @click="prevSlide3()"><</button>
           <div class="carousel-3" id="carousel3" :style="carouselStyle3(1)">
             <!-- aca se insertan las imagenes desde JS -->
             <div v-for="ficcion of ficciones" class="carousel-item-2" >
               <img :key="ficcion.id" @click="clickImagen(ficcion.id)" :class="ficcion.clase" :src="ficcion.imagen" :alt="ficcion.nombre"></img>
             </div>
           </div>
-          <button class="next-button-3" @click="nextSlide3(1)">></button>
+          <button class="next-button-3" @click="nextSlide3()">></button>
         </div>
         
         <!-- FIN CAROUSEL -->
