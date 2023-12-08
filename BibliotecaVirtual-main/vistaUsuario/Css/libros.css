@@ -1,0 +1,167 @@
+/* ESTILOS GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #D4D4D6;
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+/*ESTILOS DEL BODY*/
+section{ 
+    display: flex;    /*esto me centró el contenedor en el medio*/
+    justify-content: center;
+}
+
+.contenedor{
+    width: 90vw;  /*para que sea responsivo*/
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius:0.7em;
+    overflow: hidden;/*hace que el texto quede adentro de la ficha blanca*/
+    background-color: white;
+    flex-direction: column; /* que cambie a columna en dispositivos pequeños. Sin este sigue en fila y se corta el texto */
+    display:flex;  /*muy necesario, sino queda en box*/
+    transition: 0.3s;
+    align-items: center; /* para centrar verticalmente los elementos hijos */
+    
+}
+
+.contenedor:hover{      /*esto hace que se mueva toda la ficha*/
+    transform: translate(0, -10px);
+
+}
+
+
+
+/*sin el media query, en dispositivo grande se pone en columna*/
+
+@media (min-width: 768px) {
+    .contenedor {
+      flex-direction: row; /* Mostrar en fila en pantallas más grandes */
+      
+    }
+  
+    .portada {
+      flex: 1; /* Ocupar parte igual del espacio en pantallas más grandes */
+      
+    }
+  
+    .ficha {
+      flex: 2; /* Ocupar parte igual del espacio en pantallas más grandes */
+      
+    }
+  }
+
+
+.libro{
+    /*width: 300px;  /*valor fijo para que no se achique con el dispositivo*/
+    width:85%;
+    margin-left: 50px;
+    align-items: center;
+    
+}
+
+#libro img{   
+    width: 100%; /*que responda al div*/
+    box-shadow: 5px 5px 15px black;
+}
+
+/* BOTON */
+.botones{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /*width: 303px;  /*valor fijo para que no se achique con el dispositivo, acorde a la imagen*/
+    width: 85%;
+    margin-left: 50px;
+}
+
+
+#boton{
+    width: 45%; /*ocupa 45% del div*/
+    text-align: center;
+
+}
+
+
+.botones button{
+    width:170px;
+    height:50px;
+    border-radius:50px;
+    outline:none;
+    font-size: 15px;
+    text-transform: capitalize;
+    background-color:rgb(0, 255, 225);
+    color:black;
+    box-shadow:0 0 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all ease .2s;
+    max-width: 100%; /*para que no sea más grande que el contenedor*/
+    transform: 50%;
+    display:block;
+    margin:auto;
+    margin-bottom:20px;
+    overflow: hidden;  /*por si se desborda*/
+}
+
+.botones button:hover {    /*esto le da la animación al botón*/
+    border-color: #fff;
+    color: #fff;
+    background:black;
+   max-width: 100%;   /*Cuando se establece max-width en un valor como 100%, significa que el elemento no será más ancho que su contenedor principal, lo que permite que el contenido se ajuste automáticamente al tamaño de la pantalla o del contenedor.*/
+
+}
+
+
+#boton a{
+    text-decoration: none;
+    color: inherit;  /* Hereda el color del botón */
+    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+}
+
+
+.ficha{
+   margin-left: 40px;
+   margin-right: 40px;
+   
+   
+}
+
+.ficha h1{   
+    font-size: 30px;
+    margin:10px;
+  
+}
+
+.ficha h2{   
+    font-size: medium;
+    margin:10px;
+    
+}
+
+/* ESTRELLAS PUNTAJE */
+
+#estrellas{
+    align-content: center;
+    margin-left: 10px;
+}
+
+.checked{
+    color:yellow
+}
+
+
+ 

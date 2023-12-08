@@ -1,0 +1,110 @@
+/* ESTILOS GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    background-color: #D4D4D6;
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.article1 {
+    flex: auto;
+    width: 90%;
+    margin: 10%;
+    margin-top: 250px;
+    padding: 2% 0;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+    color: black;
+    margin-left: 4px;
+}
+
+.bot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text,
+input[type="date"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+select option {
+    color: black;
+}
+
+#mensaje_contraseña {
+    color: red;
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover:not([disabled]) {
+    background-color: #333;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .text,
+    input[type="date"] {
+        width: 45%;
+        margin-right: 10%;
+    }
+
+    input[type="email"] {
+        clear: both;
+    }
+
+    input[type="password"] {
+        width: 45%;
+        margin-right: 10%;
+    }
+
+    select {
+        width: 50%;
+        margin-left: 4px;
+    }
+
+    #mensaje_contraseña {
+        clear: both;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/libros.css">
+    <link rel="stylesheet" href="../Css/BarraNavegacion.css">
+    <link rel="stylesheet" href="../Css/PieDePagina.css">
+    <link rel="shortcut icon" href="../Imagenes/logo2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@500&family=Satisfy&family=Signika+Negative:wght@600&display=swap"
+        rel="stylesheet"> <!--Agregado por Rosa-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin&family=Dancing+Script:wght@700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet"> <!--Agregado por Rosa-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Agregado por Clari, solo para ficha-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--Agregado por Rosa-->
+    <title>Libreria Online</title>
+</head>
+
+<body>
+    <header>
+        <!-- lo insertamos desde headerFooter.js -->
+    </header>
+    <main>
+        <section id="app">
+            <div class="contenedor">
+                <div class="portada">
+                    <br><br>
+                    <div class="libro">
+                        <div id="libro">
+                            <img :src="libroDetallado.imagen" :alt="libroDetallado.nombre">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="botones">
+                        <button id="boton">
+                            <a :href="libroDetallado.libro" download>Descargar</a>
+                        </button>
+                        <button id="boton">
+                            <a href="./sucursales.html">Sucursales</a>
+                        </button>
+                    </div>
+                    <br>
+                </div>
+                <div class="ficha">
+
+                    <h1>{{libroDetallado.nombre}}</h1>
+                    <br>
+                    <h2>{{libroDetallado.escritor}}</h2>
+                    <br>
+                    <!-- ponemos las estrellas de forma dinamica dependiendo del registro -->
+                    <div id="estrellas" v-if="libroDetallado.estrellas > 0">
+                        <span v-for="n in 5" :key="n" class="fa" :class="{ 'fa-star': n <= libroDetallado.estrellas, 'fa-star checked': n <= libroDetallado.estrellas }"></span>
+                       
+                    </div>
+                    <br>
+                    <p>{{libroDetallado.resumen}}</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- lo insertamos desde headerFooter.js -->
+    </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type='text/javascript' src='../Js/headerFooter.js'></script>
+    <script type='text/javascript' src='../Js/libros.js'></script>
+</body>
+
+</html>

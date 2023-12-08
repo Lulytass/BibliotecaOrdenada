@@ -1,0 +1,25 @@
+/* ESTILOS GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #D4D4D6;
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+}
+
+.sucursales{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'EB Garamond', serif;
+    color: rgb(94, 7, 7);
+}    
+
+
+.libreria{
+    text-align: center;
+    border: 5px inset grey;
+}

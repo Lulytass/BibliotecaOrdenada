@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Css/buscador.css">
+  <link rel="stylesheet" href="../Css/BarraNavegacion.css">
+  <link rel="stylesheet" href="../Css/PieDePagina.css">
+  <link rel="shortcut icon" href="../Imagenes/logo2.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--Agregado por Rosa-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@500&family=Satisfy&family=Signika+Negative:wght@600&display=swap"
+    rel="stylesheet"> <!--Agregado por Rosa-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin&family=Dancing+Script:wght@700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"> <!--Agregado por Rosa-->
+  <title>Libreria Online</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <!-- lo insertamos desde headerFooter.js -->
+    </header>
+    <main>
+      <div class="listaLibros">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Genero</th>
+              <th>Escritor</th>
+              <th>Editorial</th>
+            </tr>
+          </thead>
+          <tbody id="registro">
+            <!-- aca se insertan los registros coincidentes desde js -->
+            <tr v-for="resultado in resultados" :key="resultado.id" @click="clickImagen(resultado.id)">
+              <td>{{resultado.nombre}}</td>
+              <td>{{resultado.genero}}</td>
+              <td>{{resultado.escritor}}</td>
+              <td>{{resultado.editorial}}</td>
+              <td hidden>{{resultado.id}}</td>
+            </tr>
+          
+          
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <!-- lo insertamos desde headerFooter.js -->
+    </footer>
+  </div>  
+  <script type='text/javascript' src='../Js/headerFooter.js'></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type='text/javascript' src='../Js/buscador.js'></script>
+</body>
+
+</html>
